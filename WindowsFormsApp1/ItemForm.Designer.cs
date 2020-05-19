@@ -54,9 +54,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Add new Item";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // type
             // 
+            this.type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.type.FormattingEnabled = true;
             this.type.Items.AddRange(new object[] {
@@ -84,7 +86,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(174, 52);
             this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
+            this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -191,21 +193,23 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(200, 433);
-            this.Controls.Add(this.addtion_label);
-            this.Controls.Add(this.addtion_textbox);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.genre_textbox);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.year_textbox);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.type);
+            this.Controls.Add(this.name_textbox);
             this.Controls.Add(this.duration_textbox);
+            this.Controls.Add(this.year_textbox);
+            this.Controls.Add(this.genre_textbox);
+            this.Controls.Add(this.addtion_textbox);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.addtion_label);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.name_textbox);
-            this.Controls.Add(this.type);
             this.Controls.Add(this.label1);
-            this.Name = "ItemForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = this.label1.Text;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.ItemForm_Load);
             this.ResumeLayout(false);

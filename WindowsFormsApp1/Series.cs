@@ -22,8 +22,17 @@ namespace WindowsFormsApp1
         public override string ToString()
         {
             String d = GetDurning();
-            return $"Series {name} {d} {year} {genre} {seasons}";
+            return $"Series;{name};{d};{year};{genre};{seasons}";
 
+        }
+        public override string ToFileString()
+        {
+            return $"S;{name};{durning};{year};{genre};{seasons}";
+        }
+
+        public override string OwnType()
+        {
+            return "Series";
         }
     }
 }

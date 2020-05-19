@@ -24,8 +24,16 @@ namespace WindowsFormsApp1
         public override string ToString()
         {
             String d = GetDurning();
-            return $"Cartoon {name} {d} {year} {genre} {age}";
+            return $"Cartoon;{name};{d};{year};{genre};{age}";
 
+        }
+        public override string ToFileString()
+        {
+            return $"C;{name};{durning};{year};{genre};{age}";
+        }
+        public override string OwnType()
+        {
+            return "Cartoon";
         }
     }
 }

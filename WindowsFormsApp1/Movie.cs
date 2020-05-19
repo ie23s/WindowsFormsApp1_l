@@ -1,11 +1,12 @@
 ﻿namespace WindowsFormsApp1
 {
-    class Movie
+    public class Movie
     {
         protected string name;
         protected int durning;
         protected int year;
         protected string genre;
+        protected int real_index = 0;
 
         public Movie(string Name, int Durning, int Year, string Genre)
         {
@@ -44,8 +45,28 @@
         public override string ToString()
         {
             string d = GetDurning();
-            return $"Movie {name} {d} {year} {genre}  ";
+            return $"Movie;{name};{d};{year};{genre}";
 
+        }
+        public virtual string ToFileString()
+        {
+            return $"M;{name};{durning};{year};{genre}";
+        }
+
+        public virtual string OwnType()
+        {
+            return "Movie";
+        }
+
+        public int Real_index
+        {
+            get { return real_index;  }
+        }
+
+        public Movie SetIndex(int i)
+        {
+            real_index = i;
+            return this;
         }
     }
 }

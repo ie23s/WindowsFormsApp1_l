@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    class Items
+    public class Items
     {
         public List<Movie> movies;
 
@@ -29,9 +29,13 @@ namespace WindowsFormsApp1
             } else if(parms[0].Equals("C"))
             {
                 m = new Cartoon(parms[1], Int32.Parse(parms[2]), Int32.Parse(parms[3]), parms[4], Int32.Parse(parms[5]));
-            } else
+            }
+            else if (parms[0].Equals("S"))
             {
                 m = new Series(parms[1], Int32.Parse(parms[2]), Int32.Parse(parms[3]), parms[4], Int32.Parse(parms[5]));
+            } else
+            {
+                return;
             }
             movies.Add(m);
             
@@ -40,6 +44,11 @@ namespace WindowsFormsApp1
         public void Remove(int index)
         {
             movies.RemoveAt(index);
+        }
+
+        public void Clear()
+        {
+            movies.Clear();
         }
     }
 }
